@@ -7,7 +7,12 @@ class GetRequester:
         self.url = url
 
     def get_response_body(self):
-        pass
+        response = requests.get(self.url)
+        return response.content
 
     def load_json(self):
-        pass
+        return json.loads(self.get_response_body())
+
+# URLs to test
+# url = "http://data.cityofnewyork.us/resource/uvks-tn5n.json"
+# url = "https://learn-co-curriculum.github.io/json-site-example/endpoints/locations.json"
